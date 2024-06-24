@@ -1,20 +1,26 @@
 package com.sj.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Data;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
-@Entity(name = "product")
+@Data
+@Entity(name = "products")
 public class ProductEntity {
+
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     private String name;
 
-    private String price;
+    private BigDecimal price;
 
+    @Column(insertable = false, updatable = false)
     private Date createdTime;
 
+    @Column(insertable = false, updatable = false)
     private Date updatedTime;
 }

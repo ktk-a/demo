@@ -5,10 +5,8 @@ import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-public class CreateUserRequest {
+public class CreateOrderRequest {
 
-    private String name;
-    private String phone;
-    private String nickname;
-
+    private Integer uid;
+    private Integer pid;
 }

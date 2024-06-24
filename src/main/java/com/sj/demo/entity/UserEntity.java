@@ -1,16 +1,17 @@
 package com.sj.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
-@Entity(name = "user")
+@Entity(name = "users")
 public class UserEntity {
+
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     private String name;
 
@@ -18,9 +19,9 @@ public class UserEntity {
 
     private String nickname;
 
-    private String password;
-
+    @Column(insertable = false, updatable = false)
     private Date createdTime;
 
+    @Column(insertable = false, updatable = false)
     private Date updatedTime;
 }

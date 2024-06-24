@@ -1,17 +1,12 @@
-package com.sj.demo.entity;
+package com.sj.demo.model.dto;
 
-import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
-@Entity(name = "orders")
-public class OrderEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class OrderDto {
     private Integer oid;
 
     private Integer uid;
@@ -22,9 +17,7 @@ public class OrderEntity {
 
     private BigDecimal price;
 
-    @Column(insertable = false, updatable = false)
     private Date createdTime;
 
-    @Column(insertable = false, updatable = false)
     private Date updatedTime;
 }
