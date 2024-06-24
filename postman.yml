@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "c7ac95dd-1a3e-4c8d-b7ad-e9efc1414117",
+		"name": "demo api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7178617"
+	},
+	"item": [
+		{
+			"name": "用戶列表(分頁)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/user?size=10&page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"user"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test3",
+							"disabled": true
+						},
+						{
+							"key": "phone",
+							"value": "0903",
+							"disabled": true
+						},
+						{
+							"key": "nickname",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根據訂單數量茶用戶",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"uid\": \"1\",\r\n    \"pid\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/user/orders/statistics?minOrders=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"user",
+						"orders",
+						"statistics"
+					],
+					"query": [
+						{
+							"key": "minOrders",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查用戶",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/user/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"user",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改用戶",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 10,\r\n    \"name\": \"test11111\",\r\n    \"nickname\": \"測試\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/user/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"user",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增用戶",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"新增用戶\",\r\n    \"phone\": \"0934\",\r\n    \"nickname\": \"測試1213\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除用戶 Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 10,\r\n    \"name\": \"test11111\",\r\n    \"nickname\": \"測試\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/user/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"user",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增訂單",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"uid\": \"1\",\r\n    \"pid\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查詢訂單",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/order?startDate=2024-01-01&endDate=2024-01-31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"order"
+					],
+					"query": [
+						{
+							"key": "oid",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "productName",
+							"value": "小米",
+							"disabled": true
+						},
+						{
+							"key": "startDate",
+							"value": "2024-01-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2024-01-31"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
