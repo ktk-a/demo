@@ -1,0 +1,22 @@
+server:
+  port: 8088
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3310/demo
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  flyway:
+    enabled: true
+    baseline-version: 1.0
+    baseline-on-migrate: true
+    validate-on-migrate: true
+    out-of-order: false
+    target: latest
+    locations: classpath:db/migration
+    url: ${spring.datasource.url}
+    user: root
+    password: 123456
